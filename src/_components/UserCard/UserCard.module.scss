@@ -1,0 +1,172 @@
+.userCard {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid hsl(0, 0%, 88%);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .leftColumn {
+      display: flex;
+      align-items: center;
+      flex: 1;
+  
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        margin-right: 16px;
+      }
+  
+      .userInfo {
+        .name {
+          margin: 0;
+          font-size: 18px;
+          font-weight: bold;
+        }
+  
+        .username,
+        .gender {
+          margin: 4px 0;
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+  
+    .centerColumn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12;
+      align-items: start;
+      text-align: center;
+  
+      .info {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+      }
+    }
+  
+    .rightColumn {
+      flex: 1;
+      text-align: right;
+  
+      .flag {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+      }
+    }
+  
+     @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      .leftColumn {
+        width: 100%;
+        margin-bottom: 16px;
+  
+        .avatar {
+          width: 48px;
+          height: 48px;
+        }
+  
+        .userInfo {
+          .name {
+            font-size: 16px;
+          }
+  
+          .username,
+          .gender {
+            font-size: 12px;
+          }
+        }
+      }
+  
+      .centerColumn {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 16px;
+  
+        .info {
+          font-size: 14px;
+        }
+      }
+  
+      .rightColumn {
+        width: 100%;
+        text-align: left;
+  
+        .flag {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+  
+  .userCardPlaceholder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .leftColumn {
+      display: flex;
+      align-items: center;
+      flex: 1;
+  
+      .userInfo {
+        margin-left: 16px;
+  
+        .placeholder {
+          margin: 4px 0;
+        }
+      }
+    }
+  
+    .centerColumn {
+      flex: 1;
+      margin: 4px;
+      text-align: center;
+  
+      .placeholder {
+        margin: 4px 0;
+      }
+    }
+  
+    .rightColumn {
+      flex: 1;
+      text-align: right;
+    }
+  
+     @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      .leftColumn {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+  
+      .centerColumn {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+  
+      .rightColumn {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }

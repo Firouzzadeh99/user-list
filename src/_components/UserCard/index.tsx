@@ -3,7 +3,7 @@ import styles from "./UserCard.module.scss";
 import { IUser } from "@/types/user-list.interface";
 
 const UserCard: React.FC<IUser> = (data: IUser) => {
-  const { name, id, picture, email, gender, phone, nat, location, login } =
+  const { name, id, email, gender, phone, nat, location, login } =
     data;
   return (
     <div key={id.value} className={styles.userCard}>

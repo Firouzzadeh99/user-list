@@ -8,16 +8,15 @@ const UserCardPlaceholder: React.FC = () => {
       <div className={styles.leftColumn}>
         <TextPlaceholder width="64px" height="64px" rounded color="#e0e0e0" />
         <div className={styles.userInfo}>
-          <TextPlaceholder width="120px" height="20px" color="#e0e0e0" />
           <TextPlaceholder width="80px" height="16px" color="#d0d0d0" />
           <TextPlaceholder width="60px" height="16px" color="#c0c0c0" />
         </div>
       </div>
 
       <div className={styles.centerColumn}>
-        <TextPlaceholder width="100px" height="16px" color="#e0e0e0" />
-        <TextPlaceholder width="100px" height="16px" color="#d0d0d0" />
-        <TextPlaceholder width="100px" height="16px" color="#c0c0c0" />
+        <TextPlaceholder width="100px" height="13px" color="#e0e0e0" />
+        <TextPlaceholder width="100px" height="13px" color="#d0d0d0" />
+        <TextPlaceholder width="100px" height="13px" color="#c0c0c0" />
       </div>
 
       <div className={styles.rightColumn}>

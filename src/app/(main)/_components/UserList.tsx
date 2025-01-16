@@ -25,11 +25,11 @@ const UserList = () => {
     if (inView && hasNextPage) {
       fetchNextPage();
     }
-  }, [inView, fetchNextPage, hasNextPage]);
+  }, [inView, hasNextPage]);
 
   if (error) {
     return (
-      <div style={{minHeight: "100vh",display: "flex", justifyContent: "center", alignItems:"center"}}>
+      <div style={{ minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
         <div>خطا در برقراری ارتباط با سرور</div>
         <div className="text-center mt-3">
           <button onClick={() => refetch()}>تلاش مجدد</button>
@@ -38,24 +38,32 @@ const UserList = () => {
     );
   }
 
-   const placeholderCount = 5;
+  const placeholderCount = 5;
 
   return (
     <div>
-       {data?.pages.map((currentPage, idx) => (
-        <Fragment key={`user-page-${idx}`}>
-          {currentPage?.results?.map((user, idx) => (
-            <UserCard key={`user-${idx}`} {...user} />
+       {isFetching && !data ? (
+        Array.from({ length: placeholderCount }).map((_, index) => (
+          <UserCardPlaceholder key={`placeholder-${index}`} />
+        ))
+      ) : (
+        <>
+           {data?.pages.map((currentPage, idx) => (
+            <Fragment key={`user-page-${idx}`}>
+              {currentPage?.results?.map((user, idx) => (
+                <UserCard key={`user-${idx}`} {...user} />
+              ))}
+            </Fragment>
           ))}
-        </Fragment>
-      ))}
 
-       {(isFetching || hasNextPage) && (
-        <div ref={ref}>
-          {Array.from({ length: placeholderCount }).map((_, index) => (
-            <UserCardPlaceholder key={index}  />
-          ))}
-        </div>
+          {(isFetchingNextPage || hasNextPage) && (
+            <div ref={ref}>
+              {Array.from({ length: placeholderCount }).map((_, index) => (
+                <UserCardPlaceholder key={`next-page-placeholder-${index}`} />
+              ))}
+            </div>
+          )}
+        </>
       )}
     </div>
   );
